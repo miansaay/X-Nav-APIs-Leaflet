@@ -17,7 +17,7 @@ $(document).ready(function() {
     function onLocationFound(e) {
        var radius = e.accuracy / 2;
        //console.log(L.marker(e.latlng).getLatLng());
-       L.marker(e.latlng).addTo(map).bindPopup("You are within " + radius + " meters from this point").openPopup();
+       L.marker(e.latlng).addTo(map).bindPopup("You are within " + radius + " meters from this point: " + '<br>'+ "Coordenadas: " + e.latlng.toString()).openPopup();
        L.circle(e.latlng, radius).addTo(map);
     }
     map.on('locationfound', onLocationFound);
